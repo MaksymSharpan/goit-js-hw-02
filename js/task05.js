@@ -1,43 +1,16 @@
-// country1 = "Китай";
-// country2 = "Чили"
-// country3 = "Австралия"
-// country4 = "Индия"
-// country5 = "Ямайка"
+const checkForSpam = function (message) {
+  const lowerCase = message.toLowerCase()
+  const result = lowerCase.includes('spam') || lowerCase.includes('sale') ? true : false
+  return result;
+};
 
-// price1 = 100;
-// price2 = 250;
-// price3 = 170;
-// price4 = 80;
-// price5 = 120;
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(checkForSpam('Latest technology news')); // false
 
-let country = prompt('Укажите вашу страну:');
-let price = '';
-country = country.toLowerCase();
+console.log(checkForSpam('JavaScript weekly newsletter')); // false
 
-switch (country) {
-  case 'китай':
-    price = '100';
-    break;
-  
-  case 'чили':
-    price = '250';
-    break;
-  
-  case 'австралия':
-    price = '170';
-    break;
-  
-  case 'индия':
-    price = '80';
-    break;
-  
-  case 'ямайка':
-    price = '120';
-    break;
-  
-  default:
-    alert('В вашей стране доставка не доступна');
-    break;
-}
+console.log(checkForSpam('Get best sale offers now!')); // true
 
-console.log (`Доставка в ${country} будет стоить ${price} кредитов`)
+console.log(checkForSpam('[SPAM] How to earn fast money?')); // true

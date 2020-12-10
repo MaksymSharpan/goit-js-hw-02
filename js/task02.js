@@ -1,20 +1,35 @@
-const total = 100;
-const ordered = 50;
+const calculateEngravingPrice = function(message, pricePerWord) {
+  const messageSplit = message.split(' ').length
+  const result = messageSplit * pricePerWord;
+  return result;
   
-// console.log(ordered > total);
-// console.log("На складе недостаточно товаров!");
 
+};
 
-// console.log(ordered < total);
-// console.log("Заказ оформлен, с вами свяжется менеджер");
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(
+  calculateEngravingPrice(
+    'Proin sociis natoque et magnis parturient montes mus',
+    10,
+  ),
+); // 80
 
-// const isInRange = ordered > total;
-// console.log("На складе недостаточно товаров!", isInRange)
+console.log(
+  calculateEngravingPrice(
+    'Proin sociis natoque et magnis parturient montes mus',
+    20,
+  ),
+); // 160
 
-if (ordered <= total) {
-  console.log("Заказ оформлен, с вами свяжется менеджер")
-}
-else { console.log('На складе недостаточно товаров!') }
+console.log(
+  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40),
+); // 240
+
+console.log(
+  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20),
+); // 120
 
 
 

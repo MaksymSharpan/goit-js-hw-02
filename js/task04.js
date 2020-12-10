@@ -1,23 +1,26 @@
-let credits = 23580;
-const pricePerDroid = 3000;
+const formatString = function(string) {
+  if (string.length > 40) {
+    const newString = string.slice(0, 40).concat('...');
+    return newString;
+  }
+  return string
+};
 
-let totalPrice;
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// вернется оригинальная строка
 
-const userInput = prompt('Сколько Дроидов Вы бы хотели приобрести?');
-console.log(Number(userInput));
-// if (userInput === null) {
-//   сonsole.log('Отменено пользователем!')
-// }
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// вернется форматированная строка
 
-totalPrice = userInput * pricePerDroid;
-console.log(Number(totalPrice));
+console.log(formatString('Curabitur ligula sapien.'));
+// вернется оригинальная строка
 
-const ecuation = credits - pricePerDroid * userInput;
-if (totalPrice > credits) {
-  console.log(`Недостаточно средств на счету! Не хватает ${ecuation} кредитов`);
-} else if (userInput === null) console.log('Отменено пользователем!');
-else {
-  console.log(
-    `Вы купили ${userInput} дроидов, на счету осталось ${ecuation} кредитов.`,
-  );
-}
+console.log(
+  formatString(
+    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+  ),
+);
+// вернется форматированная строка
